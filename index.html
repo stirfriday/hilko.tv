@@ -10,28 +10,28 @@
   <style>
     @font-face {
       font-family: 'RiotSans';
-      src: url('RiotSans2_0-Regular.woff2') format('woff2');
+      src: url('RiotSans2.0-Regular.woff2') format('woff2');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'RiotSans';
-      src: url('RiotSans2_0-Bold.woff2') format('woff2');
+      src: url('RiotSans2.0-Bold.woff2') format('woff2');
       font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'RiotSans';
-      src: url('RiotSans2_0-Italic.woff2') format('woff2');
+      src: url('RiotSans2.0-Italic.woff2') format('woff2');
       font-weight: 400;
       font-style: italic;
       font-display: swap;
     }
     @font-face {
       font-family: 'RiotSans';
-      src: url('RiotSans2_0-BoldItalic.woff2') format('woff2');
+      src: url('RiotSans2.0-BoldItalic.woff2') format('woff2');
       font-weight: 700;
       font-style: italic;
       font-display: swap;
@@ -45,23 +45,20 @@
       --text: #e8e4dc;
       --muted: #7a7570;
       --accent: #c8a96e;
-      --accent-dim: rgba(200, 169, 110, 0.12);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
       color: var(--text);
       font-family: 'RiotSans', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NOISE TEXTURE OVERLAY ── */
     body::before {
       content: '';
       position: fixed;
@@ -72,7 +69,6 @@
       opacity: 0.4;
     }
 
-    /* ── LAYOUT ── */
     .container {
       max-width: 860px;
       margin: 0 auto;
@@ -112,7 +108,6 @@
       font-size: clamp(1.1rem, 2.5vw, 1.4rem);
       color: var(--accent);
       margin-bottom: 2rem;
-      letter-spacing: 0.01em;
     }
 
     .bio {
@@ -123,16 +118,9 @@
       margin-bottom: 2.5rem;
     }
 
-    .bio strong {
-      color: var(--text);
-      font-weight: 400;
-    }
+    .bio strong { color: var(--text); font-weight: 400; }
 
-    .header-links {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
+    .header-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 
     .header-links a {
       font-size: 0.75rem;
@@ -145,10 +133,7 @@
       transition: color 0.2s, border-color 0.2s;
     }
 
-    .header-links a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
+    .header-links a:hover { color: var(--accent); border-color: var(--accent); }
 
     /* ── SECTIONS ── */
     section {
@@ -168,55 +153,72 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-company {
+      font-size: 0.82rem;
+      color: var(--muted);
       margin-bottom: 2rem;
     }
 
-    /* ── ROLE BLOCK ── */
-    .role {
-      margin-bottom: 2.5rem;
+    /* ── GAME BLOCKS ── */
+    .game-block {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
     }
 
-    .role:last-child { margin-bottom: 0; }
-
-    .role-header {
+    .game-header {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.3rem;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 0.8rem;
     }
 
-    .role-title {
+    .game-logo {
+      height: 40px;
+      width: auto;
+      flex-shrink: 0;
+      filter: brightness(0) invert(1);
+      opacity: 0.85;
+    }
+
+    .game-logo--wr {
+      filter: none;
+      opacity: 1;
+      height: 44px;
+    }
+
+    .game-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .game-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 400;
       color: var(--text);
+      line-height: 1.2;
     }
 
-    .role-years {
-      font-size: 0.75rem;
+    .game-years {
+      font-size: 0.72rem;
       letter-spacing: 0.1em;
       color: var(--muted);
     }
 
-    .role-company {
-      font-size: 0.8rem;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      margin-bottom: 0.8rem;
-    }
-
-    .role-desc {
-      font-size: 0.95rem;
+    .game-desc {
+      font-size: 0.92rem;
       color: var(--muted);
       max-width: 620px;
       line-height: 1.8;
+      margin-bottom: 1rem;
     }
 
-    /* ── EVENTS GRID ── */
+    /* ── EVENTS ── */
     .events-toggle {
-      margin-top: 1rem;
       background: none;
       border: 1px solid var(--border);
       color: var(--muted);
@@ -229,10 +231,7 @@
       transition: all 0.2s;
     }
 
-    .events-toggle:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    .events-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
     .events-list {
       display: none;
@@ -250,50 +249,33 @@
       line-height: 2;
     }
 
-    .events-list span {
-      display: inline-block;
-      margin-right: 0.3rem;
-    }
-
-    .events-list span::after {
-      content: ' ·';
-      color: var(--border);
-    }
-
+    .events-list span { display: inline-block; margin-right: 0.3rem; }
+    .events-list span::after { content: ' ·'; color: var(--border); }
     .events-list span:last-child::after { content: ''; }
 
-    /* ── PRE-RIOT ── */
+    /* ── TV GRID ── */
+    .role-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.8;
+    }
+
     .tv-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
-      margin-top: 0.5rem;
+      margin-top: 1.5rem;
     }
 
-    .tv-item {
-      background: var(--bg);
-      padding: 1rem 1.2rem;
-    }
-
-    .tv-item-title {
-      font-size: 0.85rem;
-      color: var(--text);
-      margin-bottom: 0.2rem;
-    }
-
-    .tv-item-meta {
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
+    .tv-item { background: var(--bg); padding: 1rem 1.2rem; }
+    .tv-item-title { font-size: 0.85rem; color: var(--text); margin-bottom: 0.2rem; }
+    .tv-item-meta { font-size: 0.72rem; color: var(--muted); }
 
     /* ── EDUCATION ── */
-    .edu {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
+    .edu { font-size: 0.95rem; color: var(--muted); }
     .edu strong {
       display: block;
       color: var(--text);
@@ -310,22 +292,15 @@
       animation: fadeUp 0.9s ease 0.5s forwards;
     }
 
-    footer p {
-      font-size: 0.72rem;
-      color: var(--border);
-      letter-spacing: 0.1em;
-    }
+    footer p { font-size: 0.72rem; color: var(--border); letter-spacing: 0.1em; }
 
-    /* ── ANIMATION ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 580px) {
       .tv-grid { grid-template-columns: 1fr; }
-      .role-header { flex-direction: column; }
     }
   </style>
 </head>
@@ -338,13 +313,12 @@
     <h1>Marc Hilko</h1>
     <p class="title-line">Director, Esports Production Management</p>
     <p class="bio">
-      Ten years building and running <strong>live event operations</strong> for the world's largest esports stages —
+      A decade building and running <strong>live event operations</strong> for the world's largest esports stages —
       from LoL Worlds to VCT Champions, across five continents. Currently leading production management
-      at <strong>Riot Games</strong>, where I oversee the operational infrastructure that makes global
-      tournaments happen.
+      at <strong>Riot Games</strong>, overseeing the operational infrastructure that makes global tournaments happen.
     </p>
     <div class="header-links">
-      <a href="/cdn-cgi/l/email-protection#d8b5b9aabb98b0b1b4b3b7f6acae"><span class="__cf_email__" data-cfemail="204d4152436048494c4b4f0e5456">[email&#160;protected]</span></a>
+      <a href="mailto:marc@hilko.tv">marc@hilko.tv</a>
       <a href="https://www.linkedin.com/in/mhilko/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="tel:3234320912">(323) 432-0912</a>
     </div>
@@ -353,50 +327,86 @@
   <!-- RIOT GAMES -->
   <section>
     <p class="section-label">Experience</p>
+    <p class="section-company">Riot Games, Inc. &nbsp;·&nbsp; 2016 – Present &nbsp;·&nbsp; El Segundo, CA</p>
 
-    <div class="role">
-      <div class="role-header">
-        <span class="role-title">Director, Esports Production Management</span>
-        <span class="role-years">2020 – Present</span>
+    <!-- VCT -->
+    <div class="game-block">
+      <div class="game-header">
+        <img src="VCT_Spark_RGB_White.png" alt="VCT" class="game-logo" />
+        <div class="game-meta">
+          <span class="game-title">VALORANT Champions Tour</span>
+          <span class="game-years">2021 – Present</span>
+        </div>
       </div>
-      <p class="role-company">Riot Games, Inc. — El Segundo, CA</p>
-      <p class="role-desc">
-        Lead a team of production managers responsible for live event execution, broadcast logistics, and
-        operational coordination across Riot's global esports portfolio — including VCT, LoL Worlds, MSI,
-        and TFT events. Oversee cross-functional planning with broadcast, localization, and publishing teams
-        spanning every major tournament market worldwide.
-      </p>
+      <p class="game-desc">Masters, Champions, Game Changers, and inaugural international events across four continents.</p>
       <button class="events-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? '− Hide Event Credits' : '+ View Event Credits'">+ View Event Credits</button>
       <div class="events-list">
         <p>
-          <span>LoL Worlds China 2020</span><span>LoL MSI Reykjavik 2021</span><span>VCT Masters Reykjavik 2021</span><span>VCT Masters Berlin 2021</span><span>LoL Worlds Reykjavik 2021</span><span>Wild Rift Horizon Cup Singapore 2021</span><span>VCT Champions Berlin 2021</span><span>VCT Masters Reykjavik 2022</span><span>LoL MSI Korea 2022</span><span>Wild Rift Icons Singapore 2022</span><span>VCT Masters Copenhagen 2022</span><span>VCT Champions Istanbul 2022</span><span>LoL Worlds USA 2022</span><span>VCT Game Changers Berlin 2022</span><span>VCT Invitational Sao Paulo 2023</span><span>LoL MSI London 2023</span><span>VCT Masters Tokyo 2023</span><span>VCT Champions Los Angeles 2023</span><span>LoL Worlds Korea 2023</span><span>VCT Game Changers Sao Paulo 2023</span><span>TFT Vegas Open 2023</span><span>VCT Masters Madrid 2024</span><span>LoL MSI Chengdu 2024</span><span>VCT Masters Shanghai 2024</span><span>VCT Champions Seoul 2024</span><span>LoL Worlds Europe 2024</span><span>VCT Game Changers Berlin 2024</span><span>TFT Macao Open 2024</span><span>VCT Masters Bangkok 2025</span><span>LoL First Stand Seoul 2025</span><span>VCT Masters Toronto 2025</span><span>LoL MSI Vancouver 2025</span><span>VCT Champions Paris 2025</span><span>LoL Worlds China 2025</span><span>VCT Game Changers Seoul 2025</span><span>TFT Paris Open 2025</span><span>VCT Masters Santiago 2026</span><span>LoL First Stand Sao Paulo 2026</span>
+          <span>VCT Masters Reykjavik 2021</span><span>VCT Masters Berlin 2021</span><span>VCT Champions Berlin 2021</span><span>VCT Masters Reykjavik 2022</span><span>VCT Masters Copenhagen 2022</span><span>VCT Champions Istanbul 2022</span><span>VCT Game Changers Berlin 2022</span><span>VCT Invitational Sao Paulo 2023</span><span>VCT Masters Tokyo 2023</span><span>VCT Champions Los Angeles 2023</span><span>VCT Game Changers Sao Paulo 2023</span><span>VCT Masters Madrid 2024</span><span>VCT Masters Shanghai 2024</span><span>VCT Champions Seoul 2024</span><span>VCT Game Changers Berlin 2024</span><span>VCT Masters Bangkok 2025</span><span>VCT Masters Toronto 2025</span><span>VCT Champions Paris 2025</span><span>VCT Game Changers Seoul 2025</span><span>VCT Masters Santiago 2026</span>
         </p>
       </div>
     </div>
 
-    <div class="role">
-      <div class="role-header">
-        <span class="role-title">Line Producer, Live Events</span>
-        <span class="role-years">2016 – 2020</span>
+    <!-- LOL -->
+    <div class="game-block">
+      <div class="game-header">
+        <img src="lolesports_icon_white-01.png" alt="League of Legends Esports" class="game-logo" />
+        <div class="game-meta">
+          <span class="game-title">League of Legends Esports</span>
+          <span class="game-years">2016 – Present</span>
+        </div>
       </div>
-      <p class="role-company">League of Legends Esports — Riot Games, Inc.</p>
-      <p class="role-desc">
-        Managed production operations for LoL's flagship international events, including four consecutive
-        World Championships and Mid-Season Invitationals across North America, Europe, and Asia.
-      </p>
+      <p class="game-desc">Worlds, MSI, First Stand, and All-Star events across North America, Europe, and Asia. Nine consecutive years of international LoL production.</p>
       <button class="events-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? '− Hide Event Credits' : '+ View Event Credits'">+ View Event Credits</button>
       <div class="events-list">
         <p>
-          <span>LoL NA Summer Final 2016</span><span>LoL Worlds USA 2016</span><span>LoL All Star Event Barcelona 2016</span><span>LoL NA Spring Final 2017</span><span>LoL Mid-Season Invitational Brazil 2017</span><span>LoL NA Summer Final 2017</span><span>LoL Worlds China 2017</span><span>LoL All Star Event Vegas 2017</span><span>LoL Mid-Season Invitational Paris 2018</span><span>LoL Worlds South Korea 2018</span><span>LoL All Star Event Vegas 2018</span><span>LoL Mid-Season Invitational Vietnam & Taiwan 2019</span><span>LoL Worlds Europe 2019</span><span>LoL All Star Event Vegas 2019</span>
+          <span>LoL NA Summer Final 2016</span><span>LoL Worlds USA 2016</span><span>LoL All Star Event Barcelona 2016</span><span>LoL NA Spring Final 2017</span><span>LoL Mid-Season Invitational Brazil 2017</span><span>LoL NA Summer Final 2017</span><span>LoL Worlds China 2017</span><span>LoL All Star Event Vegas 2017</span><span>LoL Mid-Season Invitational Paris 2018</span><span>LoL Worlds South Korea 2018</span><span>LoL All Star Event Vegas 2018</span><span>LoL Mid-Season Invitational Vietnam &amp; Taiwan 2019</span><span>LoL Worlds Europe 2019</span><span>LoL All Star Event Vegas 2019</span><span>LoL Worlds China 2020</span><span>LoL MSI Reykjavik 2021</span><span>LoL Worlds Reykjavik 2021</span><span>LoL MSI Korea 2022</span><span>LoL Worlds USA 2022</span><span>LoL MSI London 2023</span><span>LoL Worlds Korea 2023</span><span>LoL MSI Chengdu 2024</span><span>LoL Worlds Europe 2024</span><span>LoL First Stand Seoul 2025</span><span>LoL MSI Vancouver 2025</span><span>LoL Worlds China 2025</span><span>LoL First Stand Sao Paulo 2026</span>
         </p>
       </div>
     </div>
+
+    <!-- WILD RIFT -->
+    <div class="game-block">
+      <div class="game-header">
+        <img src="WR_Global_Icons_Symbol_White_RGB.png" alt="Wild Rift" class="game-logo" />
+        <div class="game-meta">
+          <span class="game-title">Wild Rift Esports</span>
+          <span class="game-years">2021 – 2022</span>
+        </div>
+      </div>
+      <p class="game-desc">Inaugural international Wild Rift events, establishing the competitive format for Riot's mobile title.</p>
+      <button class="events-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? '− Hide Event Credits' : '+ View Event Credits'">+ View Event Credits</button>
+      <div class="events-list">
+        <p>
+          <span>Wild Rift Horizon Cup Singapore 2021</span><span>Wild Rift Icons Singapore 2022</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- TFT -->
+    <div class="game-block">
+      <div class="game-header">
+        <img src="RG_VEGAS OPEN_LOGO_BUG_B&W-01.png" alt="TFT" class="game-logo" />
+        <div class="game-meta">
+          <span class="game-title">Teamfight Tactics</span>
+          <span class="game-years">2023 – Present</span>
+        </div>
+      </div>
+      <p class="game-desc">International TFT Opens establishing the game's live competitive presence across three continents.</p>
+      <button class="events-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? '− Hide Event Credits' : '+ View Event Credits'">+ View Event Credits</button>
+      <div class="events-list">
+        <p>
+          <span>TFT Vegas Open 2023</span><span>TFT Macao Open 2024</span><span>TFT Paris Open 2025</span>
+        </p>
+      </div>
+    </div>
+
   </section>
 
   <!-- PRE-RIOT -->
   <section>
     <p class="section-label">Television &amp; Media Production</p>
-    <p class="role-desc" style="margin-bottom: 1.5rem;">
+    <p class="role-desc">
       Before esports, a decade in broadcast and unscripted television — managing production across network TV, documentary, and live event formats.
     </p>
     <div class="tv-grid">
@@ -411,14 +421,6 @@
       <div class="tv-item">
         <p class="tv-item-title">Let's Ask America S1, S2 &amp; S3</p>
         <p class="tv-item-meta">Telepictures / SCRIPPS · Production Manager · 2012–2014</p>
-      </div>
-      <div class="tv-item">
-        <p class="tv-item-title">BC One North America Finals</p>
-        <p class="tv-item-meta">Red Bull Media House · Production Manager · 2015</p>
-      </div>
-      <div class="tv-item">
-        <p class="tv-item-title">Full Flex Express Documentary</p>
-        <p class="tv-item-meta">Red Bull Media House · Production Manager · 2015</p>
       </div>
       <div class="tv-item">
         <p class="tv-item-title">XO Project</p>
@@ -439,4 +441,12 @@
       <strong>California State University, Northridge</strong>
       BA in Television Production
     </div>
-  </se
+  </section>
+
+  <footer>
+    <p>hilko.tv &nbsp;·&nbsp; El Segundo, CA</p>
+  </footer>
+
+</div>
+</body>
+</html>
