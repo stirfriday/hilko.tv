@@ -294,6 +294,27 @@
 
     footer p { font-size: 0.72rem; color: var(--border); letter-spacing: 0.1em; }
 
+    .events-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .event-item {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .event-year {
+      color: var(--accent);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      margin-right: 0.8rem;
+      min-width: 2.5rem;
+      display: inline-block;
+    }
+
     .game-logo--nofilter {
       filter: none;
       height: 72px;
@@ -345,9 +366,14 @@
       <p class="game-desc">Masters, Champions, Game Changers, and inaugural international events across four continents.</p>
       <button class="events-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? '− Hide Event Credits' : '+ View Event Credits'">+ View Event Credits</button>
       <div class="events-list">
-        <p>
-          <span>VCT Masters Reykjavik 2021</span><span>VCT Masters Berlin 2021</span><span>VCT Champions Berlin 2021</span><span>VCT Masters Reykjavik 2022</span><span>VCT Masters Copenhagen 2022</span><span>VCT Champions Istanbul 2022</span><span>VCT Game Changers Berlin 2022</span><span>VCT Invitational Sao Paulo 2023</span><span>VCT Masters Tokyo 2023</span><span>VCT Champions Los Angeles 2023</span><span>VCT Game Changers Sao Paulo 2023</span><span>VCT Masters Madrid 2024</span><span>VCT Masters Shanghai 2024</span><span>VCT Champions Seoul 2024</span><span>VCT Game Changers Berlin 2024</span><span>VCT Masters Bangkok 2025</span><span>VCT Masters Toronto 2025</span><span>VCT Champions Paris 2025</span><span>VCT Game Changers Seoul 2025</span><span>VCT Masters Santiago 2026</span>
-        </p>
+        <div class="events-grid">
+          <div class="event-item"><span class="event-year">2021</span>Masters Reykjavik &nbsp;·&nbsp; Masters Berlin &nbsp;·&nbsp; Champions Berlin</div>
+          <div class="event-item"><span class="event-year">2022</span>Masters Reykjavik &nbsp;·&nbsp; Masters Copenhagen &nbsp;·&nbsp; Champions Istanbul &nbsp;·&nbsp; Game Changers Berlin</div>
+          <div class="event-item"><span class="event-year">2023</span>Invitational Sao Paulo &nbsp;·&nbsp; Masters Tokyo &nbsp;·&nbsp; Champions Los Angeles &nbsp;·&nbsp; Game Changers Sao Paulo</div>
+          <div class="event-item"><span class="event-year">2024</span>Masters Madrid &nbsp;·&nbsp; Masters Shanghai &nbsp;·&nbsp; Champions Seoul &nbsp;·&nbsp; Game Changers Berlin</div>
+          <div class="event-item"><span class="event-year">2025</span>Masters Bangkok &nbsp;·&nbsp; Masters Toronto &nbsp;·&nbsp; Champions Paris &nbsp;·&nbsp; Game Changers Seoul</div>
+          <div class="event-item"><span class="event-year">2026</span>Masters Santiago</div>
+        </div>
       </div>
     </div>
 
@@ -363,9 +389,19 @@
       <p class="game-desc">Worlds, MSI, First Stand, and All-Star events across North America, Europe, and Asia. Nine consecutive years of international LoL production.</p>
       <button class="events-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? '− Hide Event Credits' : '+ View Event Credits'">+ View Event Credits</button>
       <div class="events-list">
-        <p>
-          <span>LoL NA Summer Final 2016</span><span>LoL Worlds USA 2016</span><span>LoL All Star Event Barcelona 2016</span><span>LoL NA Spring Final 2017</span><span>LoL Mid-Season Invitational Brazil 2017</span><span>LoL NA Summer Final 2017</span><span>LoL Worlds China 2017</span><span>LoL All Star Event Vegas 2017</span><span>LoL Mid-Season Invitational Paris 2018</span><span>LoL Worlds South Korea 2018</span><span>LoL All Star Event Vegas 2018</span><span>LoL Mid-Season Invitational Vietnam &amp; Taiwan 2019</span><span>LoL Worlds Europe 2019</span><span>LoL All Star Event Vegas 2019</span><span>LoL Worlds China 2020</span><span>LoL MSI Reykjavik 2021</span><span>LoL Worlds Reykjavik 2021</span><span>LoL MSI Korea 2022</span><span>LoL Worlds USA 2022</span><span>LoL MSI London 2023</span><span>LoL Worlds Korea 2023</span><span>LoL MSI Chengdu 2024</span><span>LoL Worlds Europe 2024</span><span>LoL First Stand Seoul 2025</span><span>LoL MSI Vancouver 2025</span><span>LoL Worlds China 2025</span><span>LoL First Stand Sao Paulo 2026</span>
-        </p>
+        <div class="events-grid">
+          <div class="event-item"><span class="event-year">2016</span>NA Summer Final &nbsp;·&nbsp; Worlds USA &nbsp;·&nbsp; All Star Barcelona</div>
+          <div class="event-item"><span class="event-year">2017</span>NA Spring Final &nbsp;·&nbsp; MSI Brazil &nbsp;·&nbsp; NA Summer Final &nbsp;·&nbsp; Worlds China &nbsp;·&nbsp; All Star Vegas</div>
+          <div class="event-item"><span class="event-year">2018</span>MSI Paris &nbsp;·&nbsp; Worlds South Korea &nbsp;·&nbsp; All Star Vegas</div>
+          <div class="event-item"><span class="event-year">2019</span>MSI Vietnam &amp; Taiwan &nbsp;·&nbsp; Worlds Europe &nbsp;·&nbsp; All Star Vegas</div>
+          <div class="event-item"><span class="event-year">2020</span>Worlds China</div>
+          <div class="event-item"><span class="event-year">2021</span>MSI Reykjavik &nbsp;·&nbsp; Worlds Reykjavik</div>
+          <div class="event-item"><span class="event-year">2022</span>MSI Korea &nbsp;·&nbsp; Worlds USA</div>
+          <div class="event-item"><span class="event-year">2023</span>MSI London &nbsp;·&nbsp; Worlds Korea</div>
+          <div class="event-item"><span class="event-year">2024</span>MSI Chengdu &nbsp;·&nbsp; Worlds Europe</div>
+          <div class="event-item"><span class="event-year">2025</span>First Stand Seoul &nbsp;·&nbsp; MSI Vancouver &nbsp;·&nbsp; Worlds China</div>
+          <div class="event-item"><span class="event-year">2026</span>First Stand Sao Paulo</div>
+        </div>
       </div>
     </div>
 
@@ -381,9 +417,10 @@
       <p class="game-desc">Inaugural international Wild Rift events, establishing the competitive format for Riot's mobile title.</p>
       <button class="events-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? '− Hide Event Credits' : '+ View Event Credits'">+ View Event Credits</button>
       <div class="events-list">
-        <p>
-          <span>Wild Rift Horizon Cup Singapore 2021</span><span>Wild Rift Icons Singapore 2022</span>
-        </p>
+        <div class="events-grid">
+          <div class="event-item"><span class="event-year">2021</span>Horizon Cup Singapore</div>
+          <div class="event-item"><span class="event-year">2022</span>Icons Singapore</div>
+        </div>
       </div>
     </div>
 
@@ -399,9 +436,11 @@
       <p class="game-desc">International TFT Opens establishing the game's live competitive presence across three continents.</p>
       <button class="events-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? '− Hide Event Credits' : '+ View Event Credits'">+ View Event Credits</button>
       <div class="events-list">
-        <p>
-          <span>TFT Vegas Open 2023</span><span>TFT Macao Open 2024</span><span>TFT Paris Open 2025</span>
-        </p>
+        <div class="events-grid">
+          <div class="event-item"><span class="event-year">2023</span>Vegas Open</div>
+          <div class="event-item"><span class="event-year">2024</span>Macao Open</div>
+          <div class="event-item"><span class="event-year">2025</span>Paris Open</div>
+        </div>
       </div>
     </div>
 
