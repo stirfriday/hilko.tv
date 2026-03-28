@@ -294,7 +294,11 @@
 
     footer p { font-size: 0.72rem; color: var(--border); letter-spacing: 0.1em; }
 
-    @keyframes fadeUp {
+    .game-logo--tft {
+      mix-blend-mode: screen;
+      filter: none;
+      opacity: 1;
+    }
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
@@ -385,7 +389,7 @@
     <!-- TFT -->
     <div class="game-block">
       <div class="game-header">
-        <img src="RG_VEGAS_OPEN_LOGO_BW-01.png" alt="TFT" class="game-logo" />
+        <img src="RG_VEGAS%20OPEN_LOGO_BUG_BW_TRANSPARENT-01.png" alt="TFT" class="game-logo game-logo--tft" />
         <div class="game-meta">
           <span class="game-title">Teamfight Tactics</span>
           <span class="game-years">2023 – Present</span>
